@@ -31,7 +31,7 @@ function resourceRouter(options) {
     });
     router.delete('/:id', async function (req, res) {
         await options.remove(req.params.id);
-        return res.status(200).json({ message: options.label + ' deleted successfully', data: {} });
+        return res.status(204).end();
     });
     return router;
 }
